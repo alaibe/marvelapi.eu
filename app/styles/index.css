@@ -1,0 +1,23 @@
+.thumbnail .caption {
+  min-height:50px;
+  height:50px;
+  text-align: center;
+}
+
+.thumbnail {
+  border: 0 none;
+  box-shadow: none;
+}
+
+.sidebar {
+  padding: 15px;
+  top: 100px;
+  height: 100px;
+}
+
+.left {
+  left: 0px;
+}
+.right {
+  right: 0px;
+}
