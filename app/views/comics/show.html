@@ -1,0 +1,78 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Marvel Api</a>
+  </div>
+</nav>
+<scrollSpy></scrollSpy>
+<div class="row">
+  <div class="col-md-2 affix character-sidebar">
+    <img src="{{character.thumbnail.path}}/portrait_incredible.{{character.thumbnail.extension}}" alt="{{character.name}}" class="responsive img-thumbnail">
+
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><a href="#comics" prevent-default="" scroll-to="comics">
+        Comics
+        <span class="badge">
+          {{character.comics.total}}
+        </span>
+      </a></li>
+      <li><a href="#events" prevent-default="" scroll-to="events">
+        Events
+        <span class="badge">
+          {{character.events.total}}
+        </span>
+      </a></li>
+      <li><a href="#series" prevent-default="" scroll-to="series">
+        Series
+        <span class="badge">
+          {{character.series.total}}
+        </span>
+      </a></li>
+    </ul>
+  </div>
+  <div class="col-md-10 character">
+    <div class="page-header">
+      <h1>{{ character.name }}</h1>
+    </div>
+    <p>{{character.description}}</p>
+
+    <div class="row" id="comics">
+      <div ng-repeat="comic in character.comics.results" class="col-md-3">
+        <div class="thumbnail">
+          <a href="" class="thumbnail">
+            <img src="{{comic.thumbnail.path}}/portrait_medium.{{comic.thumbnail.extension}}" alt="{{comic.title}}" class="responsive img-thumbnail">
+            <div class="caption">
+              <h4>{{comic.title}}</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="events">
+      <div ng-repeat="event in character.events.results" class="col-md-3">
+        <div class="thumbnail">
+          <a href="" class="thumbnail">
+            <img src="{{event.thumbnail.path}}/portrait_medium.{{event.thumbnail.extension}}" alt="{{event.title}}" class="responsive img-thumbnail">
+            <div class="caption">
+              <h4>{{event.title}}</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="series">
+      <div ng-repeat="serie in character.series.results" class="col-md-3">
+        <div class="thumbnail">
+          <a href="" class="thumbnail">
+            <img src="{{serie.thumbnail.path}}/portrait_medium.{{serie.thumbnail.extension}}" alt="{{serie.title}}" class="responsive img-thumbnail">
+            <div class="caption">
+              <h4>{{serie.title}}</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

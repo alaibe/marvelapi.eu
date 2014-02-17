@@ -8,15 +8,19 @@ angular.module('marvelApi', [
 ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/index.html',
+      .when('/:type', {
+        templateUrl: function(params) {
+          return 'views/' + params.type + '/index.html';
+        },
         controller: 'IndexCtrl'
       })
-      .when('/characters/:id', {
-        templateUrl: 'views/characters/show.html',
+      .when('/:type/:id', {
+        templateUrl: function(params) {
+          return 'views/' + params.type + '/show.html';
+        },
         controller: 'ShowCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/characters'
       });
   });

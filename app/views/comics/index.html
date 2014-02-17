@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Marvel Api</a>
+  </div>
+</nav>
+
+<div clas="row">
+  <div ng-click="pager.previousPage()" class="sidebar left affix">
+    <a class="btn btn-default" href="#">&larr;</a>
+  </div>
+
+  <div class="col-md-12">
+    <div class="row">
+      <div ng-repeat="character in pager.data" class="col-md-2">
+        <div class="thumbnail" >
+          <a href="#/characters/{{character.id}}">
+            <img src="{{character.thumbnail.path}}/portrait_medium.{{character.thumbnail.extension}}" alt="{{character.name}}" class="responsive img-circle">
+            <div class="caption">
+              <h4>{{character.name}}</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-click="pager.nextPage()" class="sidebar right affix" >
+    <a class="btn btn-default" href="#">&rarr;</a>
+  </div>
+</div>
+
