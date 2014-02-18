@@ -38,7 +38,7 @@
     <div class="row" id="comics">
       <div ng-repeat="comic in character.comics.results" class="col-md-3">
         <div class="thumbnail">
-          <a href="" class="thumbnail">
+          <a href="#/comics/{{comic.id}}" class="thumbnail">
             <img src="{{comic.thumbnail.path}}/portrait_medium.{{comic.thumbnail.extension}}" alt="{{comic.title}}" class="responsive img-thumbnail">
             <div class="caption">
               <h4>{{comic.title}}</h4>

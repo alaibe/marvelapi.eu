@@ -11,12 +11,12 @@
 
   <div class="col-md-12">
     <div class="row">
-      <div ng-repeat="character in pager.data" class="col-md-2">
+      <div ng-repeat="comic in pager.data" class="col-md-2">
         <div class="thumbnail" >
-          <a href="#/characters/{{character.id}}">
-            <img src="{{character.thumbnail.path}}/portrait_medium.{{character.thumbnail.extension}}" alt="{{character.name}}" class="responsive img-circle">
+          <a href="#/comics/{{comic.id}}">
+            <img src="{{comic.thumbnail.path}}/portrait_medium.{{comic.thumbnail.extension}}" alt="{{comics.name}}" class="responsive img-circle">
             <div class="caption">
-              <h4>{{character.name}}</h4>
+              <h4>{{comic.title}}</h4>
             </div>
           </a>
         </div>

@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('marvelApi')
-.controller('IndexCtrl', function ($scope, CharacterApiService, Pager) {
+.controller('IndexCtrl', function ($scope, $routeParams, MarvelApiService, Pager) {
   $scope.pager = Pager;
 
   $scope.$watch('pager.page', function() {
-    new CharacterApiService.all($scope.pager);
+    var service = MarvelApiService.resolve($routeParams.type);
+    service.all($scope.pager);
   });
 });
