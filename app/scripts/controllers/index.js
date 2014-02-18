@@ -5,7 +5,6 @@ angular.module('marvelApi')
   $scope.pager = Pager;
 
   $scope.$watch('pager.page', function() {
-    var service = MarvelApiService.resolve($routeParams.type);
-    service.all($scope.pager);
+    MarvelApiService.all($routeParams.type, $scope.pager);
   });
 });

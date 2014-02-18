@@ -1,5 +1,7 @@
+'use strict';
+
 angular.module('marvelApi').factory('ComicApiService', function(Character, Comic, Event, Story, Serie){
-  var publicKey = '';
+  var publicKey = 'e28664e404abc7d1e9a298f2c677fa0f';
 
   var all = function(pager){
     Comic.get({ apikey: publicKey, limit: pager.perPage, offset: pager.offset() }, function(response){

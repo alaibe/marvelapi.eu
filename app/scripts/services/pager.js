@@ -30,11 +30,11 @@ angular.module('marvelApi').service('Pager', function(){
   };
 
   this.isFirstPage = function () {
-    return this.page == 1;
+    return this.page === 1;
   };
 
   this.isLastPage = function () {
-    return this.page == this.pageCount();
+    return this.page === this.pageCount();
   };
 
   this.pageCount = function () {
@@ -43,5 +43,5 @@ angular.module('marvelApi').service('Pager', function(){
 
   this.offset = function () {
     return this.page * this.perPage;
-  }
+  };
 });
