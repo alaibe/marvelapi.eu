@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('marvelApi').service('Pager', function(){
-  this.page      = 1;
+  this.page      = 0;
   this.perPage   = 50;
   this.itemCount = 0;
   this.data      = [];
@@ -13,32 +13,12 @@ angular.module('marvelApi').service('Pager', function(){
     this.page++;
   };
 
-  this.previousPage = function () {
-    if (this.isFirstPage()) {
-      return;
-    }
-
-    this.page--;
-  };
-
-  this.firstPage = function () {
-    this.page = 1;
-  };
-
-  this.lastPage = function () {
-    this.page = this.pageCount();
-  };
-
-  this.isFirstPage = function () {
-    return this.page === 1;
-  };
-
   this.isLastPage = function () {
     return this.page === this.pageCount();
   };
 
   this.pageCount = function () {
-    return Math.ceil(parseInt(this.itemCount) / parseInt(this.rowsPerPage));
+    return Math.ceil(parseInt(this.itemCount) / parseInt(this.perPage));
   };
 
   this.offset = function () {

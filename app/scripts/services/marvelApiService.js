@@ -2,12 +2,21 @@
 
 angular.module('marvelApi').service('MarvelApiService', function(CharacterApiService, ComicApiService){
 
-  this.all = function(type, pager){
-    return this.resolve(type).all(pager);
-  };
-
   this.find = function(type, id, scope){
     return this.resolve(type).find(scope, id);
+  };
+
+  this.loadMore = function(type, pager) {
+    var service = this.resolve(type);
+
+    service.all(pager).then(function(result) {
+      var items       = result.data.results;
+      pager.itemCount = result.data.total;
+
+      items.forEach(function(item) {
+        pager.data.push(item);
+      });
+    });
   };
 
   this.resolve = function(type){

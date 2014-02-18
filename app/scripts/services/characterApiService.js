@@ -4,14 +4,11 @@ angular.module('marvelApi').factory('CharacterApiService', function(Character, C
   var publicKey = 'e28664e404abc7d1e9a298f2c677fa0f';
 
   var all = function(pager){
-    Character.get({ apikey: publicKey, limit: pager.perPage, offset: pager.offset() }, function(response){
-      pager.data      = response.data.results;
-      pager.itemCount = response.data.total;
-    });
+    return Character.get({ apikey: publicKey, limit: pager.perPage, offset: pager.offset() }, {}).$promise;
   };
 
   var find = function($scope, id){
-    Character.get({ apikey: publicKey, id: id }, function(response){
+    return Character.get({ apikey: publicKey, id: id }, function(response){
       $scope.character = response.data.results[0];
 
       Comic.get({ apikey: publicKey, characters: id }, function(response){
