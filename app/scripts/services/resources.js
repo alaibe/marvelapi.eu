@@ -19,3 +19,7 @@ angular.module('marvelApi').factory('Story', function($resource){
 angular.module('marvelApi').factory('Serie', function($resource){
   return $resource('http://gateway.marvel.com/v1/public/series/:id', { id: '@id' }, {});
 });
+
+angular.module('marvelApi').factory('Creator', function($resource){
+  return $resource('http://gateway.marvel.com/v1/public/creators/:id', { id: '@id' }, {});
+});
