@@ -5,6 +5,10 @@ angular.module('marvelApi')
   $scope.pager = Pager;
   $scope.type  = $routeParams.type;
 
+  if ($routeParams.page) {
+    $scope.pager.page = $routeParams.page;
+  }
+
   $scope.$watch('$routeParams.type', function() {
     $scope.pager.data = [];
     $scope.page       = 0;
