@@ -18,6 +18,7 @@
     <!-- build:css({.tmp,app}) styles/index.css -->
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/show.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <!-- endbuild -->
   </head>
   <body ng-app="marvelApi">
@@ -26,8 +27,22 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div id="navbar" ng-controller="HeaderCtrl">
+        <div ng-include src="'views/header/show.html'"></div>
+    </div>
+
     <div class="container" ng-view="">
     </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-right">
+            Data provided by Marvel. © 2014 Marvel
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -64,6 +79,7 @@
     <script src="scripts/services/comicApiService.js"></script>
     <script src="scripts/services/marvelApiService.js"></script>
     <script src="scripts/services/pager.js"></script>
+    <script src="scripts/controllers/header.js"></script>
     <script src="scripts/controllers/index.js"></script>
     <script src="scripts/controllers/show.js"></script>
     <script src="scripts/directives/scrollSpy.js"></script>
