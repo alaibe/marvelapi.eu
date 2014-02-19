@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('marvelApi').service('MarvelApiService', function(CharacterApiService, ComicApiService){
+angular.module('marvelApi').service('MarvelApiService', function(CharacterApiService, ComicApiService, EventApiService,
+  SerieApiService, StoryApiService){
 
   this.find = function(type, id, scope){
     return this.resolve(type).find(scope, id);
@@ -25,6 +26,12 @@ angular.module('marvelApi').service('MarvelApiService', function(CharacterApiSer
       return CharacterApiService;
     case 'comics':
       return ComicApiService;
+    case 'events':
+      return EventApiService;
+    case 'series':
+      return SerieApiService;
+    case 'stories':
+      return StoryApiService;
     }
   };
 

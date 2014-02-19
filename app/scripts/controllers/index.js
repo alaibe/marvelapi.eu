@@ -3,6 +3,7 @@
 angular.module('marvelApi')
 .controller('IndexCtrl', function ($scope, $routeParams, MarvelApiService, Pager) {
   $scope.pager = Pager;
+  $scope.type  = $routeParams.type;
 
   $scope.$watch('$routeParams.type', function() {
     $scope.pager.data = [];
