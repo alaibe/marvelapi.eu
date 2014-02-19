@@ -1,11 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="#">Marvel Api</a>
-  </div>
-</nav>
-
 <div clas="row">
-
   <div class="col-md-12">
     <div class="row">
       <div ng-repeat="comic in pager.data" class="col-md-2">
@@ -20,9 +13,11 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="footer">
-    <div ng-click="pager.nextPage()" class="">
+<div class="row">
+  <div class="col-md-12 centered">
+    <div ng-click="pager.nextPage()">
       <a class="btn btn-default" href="">Load more</a>
     </div>
   </div>
