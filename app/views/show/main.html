@@ -24,15 +24,15 @@
 
     <div data-ng-repeat="(key, _) in hasMany">
       <div class="row" id="key">
-      <div ng-repeat="element in model[key].results" class="col-md-3">
-        <div class="thumbnail">
-          <a href="#/{{key}}/{{element.id}}">
-            <div ng-include src="'views/shared/' + key + '.html'"></div>
-          </a>
+        <div ng-repeat="element in model[key].results" class="col-md-3">
+          <div class="thumbnail">
+            <a href="#/{{key}}/{{element.id}}">
+              <div ng-include src="'views/shared/' + key + '.html'"></div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
