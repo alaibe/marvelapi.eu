@@ -28,22 +28,8 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div id="navbar" ng-controller="HeaderCtrl">
-        <div ng-include src="'views/header/show.html'"></div>
-    </div>
-
     <div class="container main" ng-view="">
     </div>
-
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-right">
-            Data provided by Marvel. © 2014 Marvel
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -75,6 +61,7 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/model.js"></script>
     <script src="scripts/services/resources.js"></script>
     <script src="scripts/services/characterApiService.js"></script>
     <script src="scripts/services/comicApiService.js"></script>

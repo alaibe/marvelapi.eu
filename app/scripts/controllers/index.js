@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('marvelApi')
-.controller('IndexCtrl', function ($scope, $routeParams, MarvelApiService, Pager) {
+.controller('IndexCtrl', function ($scope, $routeParams, MarvelApiService, Pager, Model) {
   $scope.pager = Pager;
-  $scope.type  = $routeParams.type;
+  $scope.models = Model.all;
+  $scope.title  = $routeParams.type;
 
   if ($routeParams.page) {
     $scope.pager.page = $routeParams.page;
