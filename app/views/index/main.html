@@ -5,9 +5,7 @@
     <div class="row">
       <div ng-repeat="element in pager.data" class="col-md-2">
         <div class="thumbnail" >
-          <a href="#/{{title}}/{{element.id}}">
-            <div ng-include src="'views/shared/' + title + '.html'"></div>
-          </a>
+          <a ng-include src="'views/shared/' + title + '.html'" href="#/{{title}}/{{element.id}}"></a>
         </div>
       </div>
     </div>
