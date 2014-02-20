@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('marvelApi').service('StoryApiService', function(Character, Comic, Event, Story){
+angular.module('marvelApi').service('StoryApiService', function(Character, Comic, Event, Story, Creator){
   var publicKey = 'e28664e404abc7d1e9a298f2c677fa0f';
 
   this.all = function(pager){
