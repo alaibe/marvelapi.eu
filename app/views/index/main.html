@@ -4,9 +4,9 @@
       <div ng-repeat="element in pager.data" class="col-md-2">
         <div class="thumbnail" >
           <a href="#/{{type}}/{{element.id}}">
-            <img src="{{element.thumbnail.path}}/portrait_medium.{{element.thumbnail.extension}}" alt="{{element.name || element.title}}" class="responsive img-circle">
+            <img src="{{element.thumbnail.path}}/portrait_medium.{{element.thumbnail.extension}}" alt="{{element.name || element.title || element.fullName}}" class="responsive img-circle">
             <div class="caption">
-              <h4>{{element.name || element.title}}</h4>
+              <h4>{{element.name || element.title || element.fullName}}</h4>
             </div>
           </a>
         </div>
