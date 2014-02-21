@@ -1,8 +1,29 @@
+'use strict';
+
 angular.module('marvelApi').directive('preventDefault', function() {
   return function(scope, element, attrs) {
     jQuery(element).click(function(event) {
       event.preventDefault();
     });
+  };
+});
+
+angular.module('marvelApi').directive("scrollTo", function($window){
+  return {
+    restrict : "AC",
+    compile : function(){
+
+      function scrollInto(elementId) {
+        var el = document.getElementById(elementId);
+        el.scrollIntoView();
+      }
+
+      return function($scope, $elem, $attr) {
+        $elem.bind("click", function(event){
+          scrollInto($attr.scrollTo);
+        });
+      };
+    }
   };
 });
 
@@ -37,13 +58,14 @@ angular.module('marvelApi').directive("scrollSpy", function($window){
 
     link: function($scope, $elem, $attrs) {
       $($window).scroll(function() {
+        var pos = 0;
         var highlightSpy = null;
         angular.forEach($scope.spies, function(spy, key){
           spy.out();
           var elemWithId = $elem.find('#'+spy.id);
 
           if ((pos = elemWithId.offset().top) - $window.scrollY <= 0){
-            spy.pos = pos
+            spy.pos = pos;
             if (highlightSpy == null) {
               highlightSpy = spy;
             }

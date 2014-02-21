@@ -6,7 +6,7 @@
 
     <ul class="nav nav-pills nav-stacked">
       <li spy="{{key}}" data-ng-repeat="(key, _) in hasMany">
-        <a href="#/{{key}}">
+        <a prevent-default="" scroll-to="{{key}}" href="#/{{key}}">
           {{key}}
           <span class="badge">
             {{model[key].total}}
