@@ -1,12 +1,11 @@
 <div ng-include src="'views/header.html'"></div>
 
-<scrollSpy></scrollSpy>
-<div class="row">
+<div class="row" scroll-spy>
   <div class="col-md-2 affix character-sidebar">
     <img src="{{model.thumbnail.path}}/portrait_incredible.{{model.thumbnail.extension}}" alt="{{model.title}}" class="responsive img-thumbnail">
 
     <ul class="nav nav-pills nav-stacked">
-      <li data-ng-repeat="(key, _) in hasMany">
+      <li spy="{{key}}" data-ng-repeat="(key, _) in hasMany">
         <a href="#/{{key}}">
           {{key}}
           <span class="badge">
@@ -22,14 +21,12 @@
     </div>
     <p>{{model.description}}</p>
 
-    <div data-ng-repeat="(key, _) in hasMany">
-      <div class="row" id="key">
-        <div ng-repeat="element in model[key].results" class="col-md-3">
-          <div class="thumbnail">
-            <a href="#/{{key}}/{{element.id}}">
-              <div ng-include src="'views/shared/' + key + '.html'"></div>
-            </a>
-          </div>
+    <div class="row" id="{{key}}" data-ng-repeat="(key, _) in hasMany">
+      <div ng-repeat="element in model[key].results" class="col-md-3">
+        <div class="thumbnail">
+          <a href="#/{{key}}/{{element.id}}">
+            <div ng-include src="'views/shared/' + key + '.html'"></div>
+          </a>
         </div>
       </div>
     </div>

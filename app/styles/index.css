@@ -1,12 +1,16 @@
 .thumbnail .caption {
   min-height: 75px;
   height: 75px;
-  text-align: center;
 }
 
 .thumbnail {
   border: 0 none;
   box-shadow: none;
+
+}
+
+.thumbnail div {
+  text-align: center;
 }
 
 .sidebar {
