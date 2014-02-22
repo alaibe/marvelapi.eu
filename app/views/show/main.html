@@ -22,13 +22,7 @@
     <p>{{model.description}}</p>
 
     <div class="row" id="{{key}}" data-ng-repeat="(key, _) in hasMany">
-      <div ng-repeat="element in model[key].results" class="col-md-3">
-        <div class="thumbnail">
-          <a href="#/{{key}}/{{element.id}}">
-            <div ng-include src="'views/shared/' + key + '.html'"></div>
-          </a>
-        </div>
-      </div>
+      <div ng-include src="'views/show/' + key + '.html'" ></div>
     </div>
   </div>
 </div>
