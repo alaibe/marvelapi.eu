@@ -4,7 +4,7 @@ angular.module('marvelApi')
 .controller('IndexCtrl', function ($scope, $routeParams, MarvelApiService, Pager, Model) {
   $scope.pager = Pager;
   $scope.models = Model.all;
-  $scope.title  = $routeParams.type;
+  $scope.key  = $routeParams.type;
 
   if ($routeParams.page) {
     $scope.pager.page = $routeParams.page;
