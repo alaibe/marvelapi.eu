@@ -11,7 +11,8 @@ angular.module('marvelApi').service('CharacterApiService', function(Character, C
     $scope.hasMany = this.hasMany();
 
     return Character.get({ apikey: publicKey, id: id }, function(response){
-      $scope.model = response.data.results[0];
+      $scope.model      = response.data.results[0];
+      $scope.model.type = 'character';
 
       angular.forEach($scope.hasMany, function(value, key){
         value.get({ apikey: publicKey, characters: id }, function(response){

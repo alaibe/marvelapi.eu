@@ -12,6 +12,7 @@ angular.module('marvelApi').service('CreatorApiService', function(Comic, Event, 
 
     return Creator.get({ apikey: publicKey, id: id }, function(response){
       $scope.model = response.data.results[0];
+      $scope.model.type = 'creator';
 
       angular.forEach($scope.hasMany, function(value, key){
         value.get({ apikey: publicKey, creators: id }, function(response){
