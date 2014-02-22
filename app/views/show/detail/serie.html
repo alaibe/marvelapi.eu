@@ -2,4 +2,20 @@
   <h1>{{ model.title }}</h1>
 </div>
 
-<p>{{model.description}}</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p>{{model.description || 'No description given' }}</p>
+    <p><strong>Start year:</strong> {{model.startYear}}</p>
+    <p><strong>End year:</strong> {{model.endYear}}</p>
+    <p><strong>Rating:</strong> {{model.rating}}</p>
+    <ul class="list-group">
+      <li ng-repeat="url in model.urls" class="list-group-item">
+        <a href="{{url.url}}" target="_blank" >
+          {{url.type}}
+          <span class="glyphicon glyphicon-arrow-right"></span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</div>

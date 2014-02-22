@@ -2,4 +2,26 @@
   <h1>{{ model.title }}</h1>
 </div>
 
-<p>{{model.description}}</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p>{{model.description || 'No description given' }}</p>
+    <p><strong>Digital ID:</strong> {{model.digitalId}}</p>
+    <p><strong>Issue Number:</strong> {{model.issueNumber}}</p>
+    <p><strong>ISBN:</strong> {{model.isbn}}</p>
+    <p><strong>UPC:</strong> {{model.upc}}</p>
+    <p><strong>Diamond code:</strong> {{model.diamondCode}}</p>
+    <p><strong>EAN:</strong> {{model.ean}}</p>
+    <p><strong>ISSN:</strong> {{model.issn}}</p>
+    <p><strong>Page Count:</strong> {{model.pageCount}}</p>
+    <p><strong>Price:</strong> ${{model.prices[0].price}}</p>
+    <ul class="list-group">
+      <li ng-repeat="url in model.urls" class="list-group-item">
+        <a href="{{url.url}}" target="_blank" >
+          {{url.type}}
+          <span class="glyphicon glyphicon-arrow-right"></span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</div>
